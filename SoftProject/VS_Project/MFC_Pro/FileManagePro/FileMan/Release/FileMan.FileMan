@@ -1,0 +1,92 @@
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// find_name   : 查找的文件夹名字
+// find_path   : 查找的路径
+// sour_folder : 复制/替换的源文件夹
+// oper_mode   : 操作模式: COPY、REMOVE、REPLACE
+// 函数        : void folder_find(string find_name, string find_path, string sour_folder, string oper_mode = "FIND")
+// 
+// 用法一: 删除: 删除C:/Users/12436/Desktop/1234/Examples路径下所有Project文件夹包括子目录
+// folder_find(Project, C:/Users/12436/Desktop/1234/Examples, , REMOVE);
+//
+// 用法二: 复制: C:/Users/12436/Desktop/1234/Libraries文件夹复制到
+//               C:/Users/12436/Desktop/1234/Examples路径下所有包含有User的文件夹包括子目录
+// folder_find(User, C:/Users/12436/Desktop/1234/Examples, C:/Users/12436/Desktop/1234/Libraries, COPY);
+//
+// 用法一: 替换: C:/Users/12436/Desktop/1234/Libraries文件夹替换
+//               C:/Users/12436/Desktop/1234/Examples路径下所有Libraries文件夹包括子目录
+// folder_find(Libraries, C:/Users/12436/Desktop/1234/Examples, C:/Users/12436/Desktop/1234/Libraries, REPLACE);
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// dirPath : 删除的文件夹
+// 函数    : void folder_remove(string dirPath)
+// 
+// 用法: 删除C:/Users/12436/Desktop/1234/Libraries/Include文件夹
+// folder_remove(C:/Users/12436/Desktop/1234/Libraries/Include);
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// ori_folder  : 源文件夹
+// dest_folder : 目标文件夹
+// 函数    : void folder_copy(string ori_folder, string dest_folder)
+// 
+// 用法: 将C:/Users/12436/Desktop/1234/Source文件夹下的所有文件包括子目录复制到
+//       C:/Users/12436/Desktop/1234/Libraries/Source，目标文件夹不存在则创建
+// folder_copy(C:/Users/12436/Desktop/1234/Libraries/Source, C:/Users/12436/Desktop/1234/Source);
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// ori_file  : 源文件
+// dest_file : 目标文件
+// 函数    : void copy_file(string ori_file, string dest_file)
+//
+// 用法 : 将C:/Users/12436/Desktop/1234/Libraries/Source/debug.c文件复制到C:/Users/12436/Desktop/1234/debug.c
+// copy_file(C:/Users/12436/Desktop/1234/Libraries/Source/debug.c, C:/Users/12436/Desktop/1234/debug.c);
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// file_path : 删除的文件
+// 函数      : void remove_file(string file_path)
+//
+// 用法 : 删除C:/Users/12436/Desktop/1234/debug.c文件
+// remove_file(C:/Users/12436/Desktop/1234/debug.c);
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// file_path : 文件路径
+// old_str   : 旧的字符串
+// new_str   : 新的字符串
+// 函数      : void file_str_replace(string file_path, string old_str, string new_str)
+// 
+// 用法一: 文件内容替换，将文件内容含有tx8C1200替换成tx8C126x
+// file_str_replace(C:/Users/12436/Desktop/1234/Libraries/Include/include.h, tx8C1200, tx8C126x);
+// 
+// 用法二: 文件内容过滤，过滤文件中含有tx8C1200的行
+// file_str_replace(C:/Users/12436/Desktop/1234/Libraries/Include/include.h, tx8C1200, );
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// file_path : 文件夹的路径
+// file_type : 文件类型
+// old_str   : 旧的字符串
+// new_str   : 新的字符串
+// 函数      : void folder_str_replace(string file_path, string file_type, string old_str, string new_str)
+// 
+// 用法一: 文件夹下所有的.c文件内容替换，将文件内容含有tx8C1200替换成tx8C126x
+// folder_str_replace(C:/Users/12436/Desktop/1234/Libraries/Include, .c, tx8C1200, tx8C126x);
+// 
+// 用法二: 文件夹下所有的.c文件内容过滤，过滤文件中含有tx8C1200的行
+// folder_str_replace(C:/Users/12436/Desktop/1234/Libraries/Include", .c, tx8C1200, );
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+// file_path : 文件夹的路径
+// start_str : 开始删除的字符串
+// end_str   : 结束删除的字符串
+// 函数      : void file_section_remove(string file_path, string start_str, string end_str)
+// 
+// 用法: 文件内容段落删除，行内容含有__PMU_START__开始删除，直到行内容含有__PMU_END__结束删除
+// file_section_remove(C:/Users/12436/Desktop/1234/Libraries/Include/tx8C1200_system.h, __PMU_START__, __PMU_END__); 
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+
+// folder_copy(C:/Users/12436/Desktop/1234/Libraries/Source, C:/Users/12436/Desktop/1234/Source);
+// folder_remove(C:/Users/12436/Desktop/1234/Source);
+// folder_find(Libraries, C:/Users/12436/Desktop/1234/Examples, , REMOVE);
+// folder_find(User, C:/Users/12436/Desktop/1234/Examples, C:/Users/12436/Desktop/1234/Libraries, COPY);
+// folder_find(Libraries, C:/Users/12436/Desktop/1234/Examples, C:/Users/12436/Desktop/1234/Libraries, REPLACE);
+
